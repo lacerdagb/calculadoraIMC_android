@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
                 String value = String.format(Locale.getDefault(), "IMC: %.2f", result);
                 textViewResult.setText(value);
+                textViewResult.setVisibility(View.VISIBLE);
             }
         });
 
@@ -70,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 editTextWeight.setText("");
                 seekBarHeight.setProgress(0);
+                textViewResult.setText("");
+
+                textViewResult.setVisibility(View.GONE);
+                textViewHeight.setVisibility(View.GONE);
             }
         });
 
