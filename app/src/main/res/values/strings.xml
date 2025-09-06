@@ -5,4 +5,7 @@
     <string name="label_height">Altura (cm)</string>
     <string name="button_clear">Limpar</string>
     <string name="button_calculate">Calcular</string>
+    <string name="msg_validation_height">Informe uma altura válida!</string>
+    <string name="msg_validation_weight">Informe um peso válido!</string>
+
 </resources>
