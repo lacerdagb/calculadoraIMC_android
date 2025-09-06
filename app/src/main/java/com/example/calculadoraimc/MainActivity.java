@@ -13,6 +13,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -32,7 +34,20 @@ public class MainActivity extends AppCompatActivity {
         Button buttonClear = findViewById(R.id.button_clear);
         Button buttonCalculate = findViewById(R.id.button_calculate);
         TextView textViewHeight = findViewById(R.id.textview_height);
+        TextView textViewResult = findViewById(R.id.textview_result);
 
+        buttonCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String weightText = editTextWeight.getText().toString();
+                double height = (double)seekBarHeight.getProgress() / 100;
+                double weight = Double.parseDouble(weightText); // Conversão
+                double result = weight / (height * height);
+
+                String value = String.format(Locale.getDefault(), "IMC: %.2f", result);
+                textViewResult.setText(value);
+            }
+        });
 
         seekBarHeight.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
